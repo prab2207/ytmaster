@@ -1,0 +1,260 @@
+<html>
+<head>
+    <title>Indigo Smart Inventory</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <script src="{{ url_for('static',filename='js/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.cookie.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/angular.min.js') }}"></script>   
+    <script src="{{ url_for('static',filename='js/angular-sanitize.js') }}"></script>   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <style>
+        
+
+.switch {
+    display: block;
+  margin: 12px auto;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 70px;
+	height: 30px;
+	padding: 3px;
+	background-color: white;
+	-moz-border-radius: 18px;
+	-webkit-border-radius: 18px;
+	border-radius: 18px;
+	cursor: pointer;
+}
+
+.switch-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.switch-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	font-size: 10px;
+	text-transform: uppercase;
+	background:#bdc3c7;
+	-moz-border-radius: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	-webkit-transition: 0.15s ease-out;
+	-moz-transition: 0.15s ease-out;
+	-o-transition: 0.15s ease-out;
+	transition: 0.15s ease-out;
+	-webkit-transition-property: opacity background border;
+	-moz-transition-property: opacity background border;
+	-o-transition-property: opacity background border;
+	transition-property: opacity background border;
+}
+.switch-label:before, .switch-label:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -.5em;
+  line-height: 1;
+  -webkit-transition: inherit;
+  -moz-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+  font-size:14px;
+}
+.switch-label:before {
+  content: attr(data-off);
+  right: 11px;
+  color: #000;
+}
+.switch-label:after {
+  content: attr(data-on);
+  left: 11px;
+  color: white;
+  opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+	background: #34495E;
+}
+.switch-input:checked ~ .switch-label:before {
+  opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+  opacity: 1;
+}
+
+.switch-handle {
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	width: 18px;
+	height: 18px;
+	background: white;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-transition: left 0.15s ease-out;
+	-moz-transition: left 0.15s ease-out;
+	-o-transition: left 0.15s ease-out;
+	transition: left 0.15s ease-out;
+}
+	.switch-handle:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -6px 0 0 -6px;
+		width: 12px;
+		height: 12px;
+		background: #f9f9f9;
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+		border-radius: 6px;
+		-moz-box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+		-webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+		box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+		background-image: -webkit-linear-gradient(top, #eeeeee, white);
+		background-image: -moz-linear-gradient(top, #eeeeee, white);
+		background-image: -o-linear-gradient(top, #eeeeee, white);
+		background-image: linear-gradient(to bottom, #eeeeee, white);
+	}
+
+
+.switch-input:checked ~ .switch-handle {
+	background:#1abc9c;
+	left: 45px;
+	-moz-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch-input:checked ~	.switch-handle:before{
+	background:#1abc9c;
+}
+.switch-green > .switch-input:checked ~ .switch-label {
+  background: #4fb845;
+}
+
+    </style>
+</head>
+<form action="/searchEngine/submit" method="post">
+<body class="mode whitemode" ng-app="appX" ng-controller="appCtrl">
+    <script>
+
+        var partsdata={{data | safe}}
+        alert(partsdata)
+    </script>
+
+</body>
+<script src="{{ url_for('static',filename='js/main_iot.js') }}"></script>   
+<div class="iconplaceholder mode whitemode">
+    <div class="HPLogo mode whitemode"></div>
+</div>
+<div class="hpcolorspace mode whitemode">
+
+</div>
+
+
+<div class="mode darkmode" id="darkmodeplaceholder">
+    <div class="darkmode-col mode whitemode">
+    <span>Dark mode</span>
+    </div>
+    <div class="darkmode-col">
+    <label class="mode whitemode switch" style="margin:0px;" >
+        <input type="checkbox" class="switch-input" id="darkmode">
+            <span class="switch-label" data-on="On" data-off="Off"></span>
+            <span class="switch-handle"></span>
+    </label>
+    </div>
+</div>
+<div class="center-div mode whitemode">
+    <div class="header mode whitemode" style="text-align:center">
+        <h1>Smart Inventory List</h1>
+        <input type="text" class="hiddenvalues" name="project" value={{project}}></input>
+        <input type="text" class="hiddenvalues" name="userid" value={{userid}}></input>
+        <input type="text" class="hiddenvalues" name="processname" value={{processname}}></input>
+    </div>
+    <div class="mode whitemode searchlayout">
+      <div style="display: table-row">
+        <div style="width: 50%; display: table-cell;"> 
+            <div class="main mode whitemode">
+
+
+                <div class="mode whitemode Result Heading">
+                    <div class="mode whitemode thhead Rank">Type</div>
+                    <div class="mode whitemode thhead Description"></a></div>
+                </div>
+                <div class="mode whitemode Result Answers" ng-repeat="item in partsdata" >
+                  <div class="mode whitemode Rank"><span class="fa fa-file-powerpoint /*fa-spin*/ mode whitemode fileicon" ></span></div>
+                  <div></div>
+                  <div class="mode whitemode Description p_//item['Partno']//" id="result_content_//item//">
+                      <a  >//item["Partno"]//</a>
+                      <br/>
+                      <div class="mode whitemode Description hover" >//item["PartDesc"]//</div>  
+                      <div class="mode whitemode Description hover" >Last updated : //CurrentDate | date:'dd/MM/yyyy HH:mm:ss'//</div>                            
+                  </div>
+                    
+              </div>
+            <!-- 
+            {% for item in data %}
+            <script>
+                //alert("{{item.textdata | safe}}")
+            </script>
+            <div class="mode whitemode Result Answers" ng-click="showPreview({{loop.index}})" >
+                <div class="mode whitemode Rank"><span class="fa fa-file-powerpoint /*fa-spin*/ mode whitemode fileicon" ></span></div>
+                <div></div>
+                <div class="mode whitemode Description" id="result_content_{{loop.index}}">
+                    <a  >{{item["Partno"]}}</a>
+                    <br/>
+                    <div class="mode whitemode Description hover" >{{item["PartDesc"] | safe}}</div>                            
+                </div>
+
+            </div>
+
+                               
+            {% endfor %}-->  
+            </div>                
+        
+        </div>
+        <div style="display: table-cell;width:45%"> <div class="mode whitemode thhead Rank" style="width:100%">Customer details</div>
+        <div class="previewbuttons">
+                <div class="">
+                </div>
+                
+        </div>
+            <div class="rightcontent mode whitemode" id="" style="position: relative;">
+                <div class="mode whitemode">
+                  <a  >Customer name</a>
+                  <br/>
+                  <div class="mode whitemode hover" >Janus International</div>                            
+                  <br/>
+                </div>
+                <div class="mode whitemode">
+                  <a  >End User Code</a>
+                  <br/>
+                  <div class="mode whitemode hover" >E850202</div>                            
+                  <br/>
+                </div>
+                <div class="mode whitemode">
+                  <a  >UTK Code</a>
+                  <br/>
+                  <div class="mode whitemode hover" >CA497-01291</div>                            
+                  <br/>
+                </div>
+                <div id="contentprev"></div>
+                <!--<iframe  id="loadpreviewcontent" frameborder="0" marginheight="0" marginwidth="0" width="100%" style="height:100vh" scrolling="auto" ></iframe>-->
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+<script src="{{ url_for('static',filename='js/main_iot.js') }}"></script>  
+</form>
+
+</html>

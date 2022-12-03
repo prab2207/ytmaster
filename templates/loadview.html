@@ -1,0 +1,125 @@
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+<script>
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+var mobile = getParameterByName('mobile');
+dererers={{data.dererers | safe}}
+source={{data.source | safe}}
+videocount={{count | safe}}
+video_data={{videono | safe}}
+timervar=null
+titlecontent=null
+remaining=null
+
+    linkcollection={{data.videos | safe}}
+/*
+linkcollection=[
+    {"name":"Maggi Omlette","Channel":"egg","link":"https://www.youtube.com/watch?v=6wS_lIycnJY","secs":10},
+    {"name":"Destroy tank from Wind turbine","Channel":"Gamet","link":"https://www.youtube.com/watch?v=kLH1orXVHFY","secs":20},
+    {"name":"Into the dead 2 Divided ","Channel":"gamet","link":"https://www.youtube.com/watch?v=saPMzlCGQIc","secs":20},
+]*/
+
+
+//linkcollection=["https://www.yahoo.com","https://www.google.com"]
+    actualwindow=null
+    count=0
+    
+//https://vk.com/away.php?to=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DExPRqyC0D0Q
+//https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DExPRqyC0D0Q
+//https://dereferer.me/?https%3A//l.facebook.com/l.php%3Fu%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DExPRqyC0D0Q
+//https://dereferer.me/?https://l.instagram.com/?u=https://www.youtube.com/watch?v=WI_IS2qAk6Y&e=ATMclvjAiMj69h4AtMWbTLIx5qZFg24-HAQ2WCF7Rdi5j2REtXxrxE2-aTugwo2qZRxu-bxgbFMQINNA&s=1
+//https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cad=rja&uact=8&url=https://t.co/PGBhV3rACq
+//https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cad=rja&uact=8&url=https://www.youtube.com/watch?v=saPMzlCGQIc
+//https://www.youtube.com/watch?fbclid=IwAR177FSeL4LH94r1QVUrNuyXbohZrmMjT1D51QdgtA_o4qP7eyUfRP1-dYM&v=9yUH8Loycnk&feature=youtu.be
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    timervar=setInterval(function () {
+        
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            count++;
+            if(count<linkcollection.length){
+                /*if(actualwindow!=null && false == actualwindow.closed)
+                {
+                    actualwindow.close();
+                }*/
+
+                randhref=Math.floor(Math.random() * dererers.length)
+                sourceval=Math.floor(Math.random() * source.length)
+                if(source[sourceval]=="facebook"){
+                    formurl="https://l.facebook.com/l.php?u="+linkcollection[count]["link"]
+                    formurl=dererers[randhref]+formurl
+                }
+                else if(source[sourceval]=="instagram"){
+                    formurl="https://l.instagram.com/?u="+linkcollection[count]["link"]+"&e=ATMclvjAiMj69h4AtMWbTLIx5qZFg24-HAQ2WCF7Rdi5j2REtXxrxE2-aTugwo2qZRxu-bxgbFMQINNA&s=1"
+                    formurl=dererers[randhref]+formurl
+                }
+                else if(source[sourceval]=="google"){
+                    formurl="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cad=rja&uact=8&url="+linkcollection[count]["link"]
+                }
+                else if(source[sourceval]=="vk"){
+                    formurl="https://vk.com/away.php?to="+linkcollection[count]["link"]
+                    formurl=dererers[randhref]+formurl
+                }
+
+            
+            timer = linkcollection[count]["secs"];
+            if(mobile=="1") timer=timer-20
+            //timer=5
+            actualwindow=window.open("/loadYT_view/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550"); 
+            
+            titlecontent.textContent=linkcollection[count]["name"]
+            remaining.textContent=linkcollection.length-count
+            }
+            else{
+                actualwindow=window.open("https://www.bing.com", "Load YT Herokku", "width=1000,height=550");
+                titlecontent.textContent= "Completed"
+                remaining.textContent="Completed"
+                clearInterval(timervar)
+            }
+        }
+    }, 1000);
+}
+function openLink(cnt){
+    //actualwindow=
+    actualwindow.open(linkcollection[count]);
+    //window.open("/loadYT_view?cnt="+cnt, "Google", "width=1000,height=550");
+}
+
+window.addEventListener("load", function(event) 
+{
+    var fiveMinutes = linkcollection[count]["secs"],
+        display = document.querySelector('#time');
+        titlecontent=document.querySelector("#title");
+        remaining=document.querySelector("#remaining");
+        
+        actualwindow=window.open("/loadYT_view/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550");   
+        titlecontent.textContent=   linkcollection[count]["name"]
+        remaining.textContent=linkcollection.length
+    startTimer(fiveMinutes, display);
+});
+
+</script>
+<body>
+
+    <div>Registration closes in <span id="time">05:00</span> minutes!</div>
+    <div>Playing : <span id="title"></span></div>
+    <div>Videos remaining: <span id="remaining"></span></div>
+<input type="button" id="start" onclick="initiate_videos()" value="Start"/>
+</body>

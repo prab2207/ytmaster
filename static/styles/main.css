@@ -1,0 +1,464 @@
+body{
+    transition: all 0.5s ease;
+    -webkit-transition: background-color 0.2s;
+}
+body.whitemode{
+    font-family:"HP Simplified" !important
+}
+body.darkmode{
+    font-family:"HP Simplified" !important;
+    background-color: #2c2c2c !important;
+    
+}
+.Result{
+    display:flex;
+}
+input{
+    font-family:"HP Simplified" !important
+}
+.Rank{
+width:50px;
+}
+.Description.whitemode{
+width:100%;
+text-align:justify;
+font-size:15px;
+color:#000;
+padding: 10px 0px;
+}
+.Description.darkmode{
+    width:100%;
+    text-align:justify;
+    font-size:15px;
+    color:#fff;
+    padding: 10px 0px;
+    }
+.FileLink{
+width:300px;
+}
+.main{
+    text-align:center;  
+}
+.Heading {
+    display: flex;
+}
+.thhead{
+    background-color: #d3d3d3;
+    color: #fff;
+    padding: 10px;
+    
+}
+.thhead.darkmode{
+    background-color: #5b5b5b;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;    
+}
+.thhead.whitemode{
+    background-color: #c2c2c2;
+    color: #000;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.searchlayout{
+    text-align: center;
+    margin:10px 0px;
+
+}
+.searchtext.whitemode{
+    height:46px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border:1px solid #32aec6;
+        font-size: 17px;
+        width:350px;
+    font-weight: bold;
+}
+.searchtext.darkmode{
+    height: 46px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: 1px solid #8d8d8d;
+    color: #ffffff;
+    background-color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    width:350px;
+}
+.logintext.whitemode{
+    height:46px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border:1px solid #32aec6;
+        font-size: 17px;
+        width:350px;
+    font-weight: bold;
+}
+.logintext.darkmode{
+    height: 46px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: 1px solid #8d8d8d;
+    color: #ffffff;
+    background-color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    width:350px;
+}
+.txtbox input{
+    width:700px;
+    height:40px;
+    
+}
+.searchbtn input{
+    height:40px;
+    width:200px;
+    margin-top:10px;
+}
+.searchbtn.darkmode input{
+    background-color: #487897;
+    color: #efefef;
+}
+.hiddenvalues{
+    display:none;
+}
+#darkmodeplaceholder{
+    position: absolute;
+    right:10px;
+    top:10px;
+}
+.darkmode-col{
+
+}
+.switch {
+    display: block;
+  margin: 12px auto;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 70px;
+	height: 30px;
+	padding: 3px;
+	background-color: white;
+	-moz-border-radius: 18px;
+	-webkit-border-radius: 18px;
+	border-radius: 18px;
+	cursor: pointer;
+}
+.switch.whitemode{
+    background-color: white;   
+}
+.switch.darkmode{
+    background-color: #2c2c2c;  
+}
+.searchmain {
+    text-align: center;
+    margin: 30px 32px;
+}
+.maincontent{
+    width:900px;
+}
+.previewcontent{
+    width:100px;
+}
+.darkmode a{
+    color:#fff;
+    font-weight:bold;
+    text-decoration: underline;
+}
+.whitemode a{
+    color:#000;
+    font-weight:bold;
+    text-decoration: underline;
+}
+.whitemode .match{
+    background-color: #0c769b;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+.darkmode .match{
+    background-color: #f6e78e;
+    color: #3c3737;
+    padding: 1px 5px;
+    border-radius: 3px;  
+}
+.rightcontent.darkmode{
+    overflow-y: scroll;
+    background-color: #212122;
+    padding: 10px;
+    min-height: 500px;
+    min-width: 100%;
+    display: block;
+    overflow:hidden;
+    
+}
+.rightcontent:hover {
+    overflow: auto;
+ }
+.rightcontent.whitemode{
+    overflow-y: scroll;
+    background-color:#fff;
+    color:#000;
+    padding: 10px;
+    min-height: 500px;
+    min-width: 100%;
+    display: block;
+    overflow:hidden;
+}
+.fileicon.whitemode{
+    color:#f14545;
+    line-height: 36px;
+    font-size: 22px;
+}
+.fileicon.darkmode{
+    color:#fff;
+    line-height: 36px;
+    font-size: 22px;
+}
+.Result.Answers.whitemode:hover{
+background-color:#efefef;
+cursor: pointer;
+}
+.Result.Answers.darkmode:hover{
+    background-color:#212122;
+    cursor: pointer;
+    }
+
+textarea:focus, input:focus{
+    outline: none;
+}
+#phraseplaceholder{
+    margin:10px 10px;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+
+  }
+  
+.searchtext::before{
+      font-family: "Font awesome";
+  }
+
+  .center-div.whitemode
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 1000px;
+  height: 250px;
+  border-radius: 3px;
+}
+.center-div.darkmode
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 1000px;
+  height: 250px;
+  border-radius: 3px;
+}
+input:before{
+    font-weight: bold;
+    font-family:"Font Awesome 5 Free";
+    content: "\f007";
+    display: block;
+}
+.searchBoxDiv{
+    width: 700px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+#filtersubmit {
+    position: relative;
+    z-index: 1;
+    left: -36px;
+    top: 1px;
+    color: #7B7B7B;
+    cursor:pointer;
+    width: 0;
+}
+.HPLogo.whitemode {
+    
+    background: url(/static/images/hp-logo-print.png) no-repeat;
+    position: absolute;
+    height: 100px;
+    width: 72px;
+    left: 0px;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    top: 15px;
+}
+.HPLogo.darkmode {
+    background: url(/static/images/hp-logo-print_w.png) no-repeat;
+    position: absolute;
+    height: 100px;
+    width: 72px;
+    left: 0px;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    top: 15px;
+}
+.iconplaceholder.whitemode{
+    height: 100px;
+    position: relative;
+    border-bottom: 20px solid #0171ad;
+}
+.hpcolorspace.whitemode{
+    height:30px;
+    background-color:#0171ad
+}
+.hpcolorspace.darkmode{
+    height:30px;
+    background-color:#d2d2d2
+}
+.iconplaceholder.darkmode{
+    
+    height: 100px;
+    position: relative;
+    border-bottom: 20px solid #d2d2d2;
+}
+.regioncaption {
+    font-size: 17px;
+}
+
+.SubHeading {
+    position: absolute;
+    margin-top: 75px;
+    font-family: "HP Simplified";
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+}
+
+@media screen and (max-width: 400px){
+    .header{
+        display:none;
+    }
+}
+#previewcontent{
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0px 11px #bababa;
+}
+#previewcontent object{
+    height:100vh;
+    width:100%;
+}
+#previewcontent object html:hover{
+overflow: auto;
+}
+#previewcontent object html{
+    overflow: hidden;
+}
+#previewcontent object{
+    height:100vh;
+    width:100%;
+}
+#contentprev{
+    height: 100vh;
+    overflow: auto;
+}
+.headingabs{
+    position: absolute;
+    margin-left:135px;
+    margin-top:15px;
+}
+.Answers.whitemode:hover{
+    border-left: 3px solid #0dacf1;
+    -webkit-transition: border-left 0.2s;
+}
+.Answers.darkmode:hover{
+    border-left: 3px solid #fff;
+    -webkit-transition: border-left 0.2s;
+}
+#previewcontent.whitemode{
+    white-space: break-spaces;
+    text-align: left;
+    background-color:#fff;
+}
+#previewcontent.darkmode{
+    white-space: break-spaces;
+    text-align: left;
+    background-color:#fff;
+}
+iframe html{
+    font-family: "HP Simplified";
+}
+.downloadbutton.whitemode{
+    width: 150px;
+    position: absolute;
+    background-color: #0171ad;
+    right: 30px;
+    top: 10px;
+    color: #fff;
+}
+.downloadbutton.darkmode{
+    width: 150px;
+    position: absolute;
+    background-color: #9d9b96;
+    right: 30px;
+    top: 10px;
+    color: #fff;
+}
+.darkmode .highlight {
+    background-color: #f6e78e;
+    color: #3c3737;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+.whitemode .highlight {
+    background-color: #0c769b;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+.headingabs.whitemode{
+    color:#000;
+}
+.headingabs.darkmode{
+    color:#fff;
+}
+.main.whitemode{
+    color:#000;
+}
+.main.darkmode{
+    color:#fff;
+}
+.header.whitemode h2,.header.whitemode h1{
+
+}
+.header.darkmode h2,.header.darkmode h1{
+color:#fff;
+}
+.darkmode-col.whitemode{
+    color:#000;
+}
+.darkmode-col.darkmode{
+    color:#fff;
+}
+.p_No{
+    background-color:red;
+    color:#fff !important;
+}
+.p_No a, .p_No .Description{
+    color:#fff !important;
+}
+
+.p_EBP-0070-90{
+    background-color:rgb(14, 194, 89);
+    color:#fff !important;
+}
+.p_EBP-0070-90 a, .p_EBP-0070-90 .Description{
+    color:#fff !important;
+}

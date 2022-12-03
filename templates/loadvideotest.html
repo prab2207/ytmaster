@@ -1,0 +1,42 @@
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
+<script>
+dererers={{data.dererers | safe}}
+source={{data.source | safe}}
+videocount={{count | safe}}
+linkcollection={{data.videos | safe}}
+video_data={{videono | safe}}
+randhref=Math.floor(Math.random() * dererers.length)
+sourceval=Math.floor(Math.random() * source.length)
+if(source[sourceval]=="facebook"){
+    formurl="https://l.facebook.com/l.php?u="+linkcollection[videocount]["link"]
+    formurl=dererers[randhref]+formurl
+}
+else if(source[sourceval]=="instagram"){
+    formurl="https://l.instagram.com/?u="+linkcollection[videocount]["link"]+"&e=ATMclvjAiMj69h4AtMWbTLIx5qZFg24-HAQ2WCF7Rdi5j2REtXxrxE2-aTugwo2qZRxu-bxgbFMQINNA&s=1"
+    formurl=dererers[randhref]+formurl
+}
+else if(source[sourceval]=="google"){
+    formurl="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cad=rja&uact=8&url="+linkcollection[videocount]["link"]
+}
+else if(source[sourceval]=="vk"){
+    formurl="https://vk.com/away.php?to="+linkcollection[videocount]["link"]
+    formurl=dererers[randhref]+formurl
+}
+
+if(linkcollection[videocount]["jump"]=="twitter" || linkcollection[videocount]["jump"]=="bing" || linkcollection[videocount]["jump"]=="yandex" || linkcollection[videocount]["jump"]=="yahoo")
+{
+    formurl=linkcollection[videocount]["link"]
+    formurl="https://dereferer.me/?"+formurl
+}
+
+location.replace(formurl)
+
+</script>
+<body>
+
+    <div>Loading video--{{videoprop["title"]}}</div>
+
+</body>

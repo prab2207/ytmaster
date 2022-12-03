@@ -1,0 +1,52 @@
+body{
+    font-family:"HP Simplified" !important;
+    background-color:#000;
+    color:#fff;
+}
+.Result{
+    display:flex;
+}
+.Rank{
+width:50px;
+}
+.Description{
+width:700px;
+text-align:justify;
+font-size:15px;
+}
+.FileLink{
+width:300px;
+}
+.main{
+    text-align:center;  
+}
+.Heading {
+    display: flex;
+}
+.thhead{
+    background-color: #565f80;
+    color: #fff;
+    padding: 10px;
+    
+}
+.searchlayout{
+    text-align: center;
+    margin:10px 0px;
+
+}
+.searchtext{
+    border-radius: 20px;
+    padding-left: 20px;
+    border:1px solid #32aec6;
+}
+.txtbox input{
+    width:700px;
+    height:40px;
+}
+.searchbtn input{
+    height:40px;
+    width:200px;
+}
+.hiddenvalues{
+    display:none;
+}
