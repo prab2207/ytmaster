@@ -3,13 +3,14 @@
 "source":["facebook","instagram","google","vk"],
 "videos":
 [
-
     
+    {"name":"instant dosa","Channel":"egg","link":"https://t.co/YdJDDwKXHY","jump":"twitter","secs":180},    
+    {"name":"Hummus egg sandwich","Channel":"egg","link":"https://www.youtube.com/watch?v=V7cDgOmmkNc","jump":"straight","secs":400}, 
     {"name":"Egg popcorn | Egg recipes | Crispy egg fry | Egg fry | Amuse bouche | Egg oeuf","Channel":"egg","link":"https://t.co/ZGHtt3gpFp","jump":"twitter","secs":260},
-    {"name":"Avatar 2 trailer | Avatar the way of water  |  Tamil teaser trailer | December 2022 | Avatar tamil","Channel":"vlog","link":"https://t.co/JDWC6WKnmx","jump":"twitter","secs":120},
+    {"name":"instant dosa","Channel":"egg","link":"https://www.youtube.com/watch?v=Bmn_7oPC8-M","jump":"straight","secs":180},
     {"name":"Egg burger [2] | Egg potato burger | Egg recipes | Healthy snack","Channel":"egg","link":"https://t.co/IMx5nRG24U","jump":"twitter","secs":180},
     {"name":"Trip to swiss | Trip to Lauterbrunen  | Lauterbrunen  | Swiss travel (Part 3)","Channel":"gamet","link":"https://www.youtube.com/watch?v=dAIL5C0eoxs","jump":"straight","secs":300},  
-    {"name":"சர்வர் சுந்தரம் நகைச்சுவை காட்சி | Nagesh comedy | remastered and colorized | AI Deep learning","Channel":"vlog","link":"https://www.youtube.com/watch?v=oFZgE0ikHMs","jump":"straight","secs":150},
+    {"name":"Hummus egg sandwich","Channel":"egg","link":"https://t.co/Z1Hbt3loVj","jump":"twitter","secs":400}, 
     {"name":"COD New vision city | Call of duty mobile new map | call of Duty season","Channel":"gamet","link":"https://t.co/AeHZ3eTTlb","jump":"twitter","secs":540},
     {"name":"Quail egg curry | Egg curry | Spicy egg","Channel":"egg","link":"https://t.co/FpCwgm5b8u","jump":"twitter","secs":300},
     {"name":"Banana leaf omelette | Healthy snack","Channel":"egg","link":"https://www.youtube.com/watch?v=ExPRqyC0D0Q","jump":"straight","secs":240},
@@ -18,6 +19,7 @@
     {"name":"Desperado vs The Butcher  ","Channel":"gamet","link":"https://www.youtube.com/watch?v=zPx9VW_KB7c","jump":"straight","secs":120},    
     {"name":"Egg vermicelli | Egg semiya","Channel":"egg","link":"https://www.youtube.com/watch?v=e1J0Fj0XBj0","jump":"straight","secs":200},
     {"name":"Cracked egg gravy | Egg gravy ","Channel":"egg","link":"https://t.co/FfGSVRNYR3","jump":"twitter","secs":220},    
+    {"name":"Avatar metkayina omelette","Channel":"egg","link":"https://www.youtube.com/watch?v=KBW29jmPvC4&t=9s","jump":"straight","secs":70},    
     {"name":"TRANSFORMERS  Fall of Cybertron","Channel":"gamet","link":"https://www.youtube.com/watch?v=9yUH8Loycnk","jump":"straight","secs":120},    
     {"name":"Spanish Omelette (Tortilla) | Omelette","Channel":"egg","link":"https://www.youtube.com/watch?v=0Xep-lUnmAM","jump":"straight","secs":240},
     {"name":"Call of duty snowfight","Channel":"gamet","link":"https://www.youtube.com/watch?v=VlqeXosvpmU","jump":"straight","secs":180},    
@@ -51,9 +53,7 @@
     {"name":"Chicken fry | KFC Style ","Channel":"egg","link":"https://www.youtube.com/watch?v=XveXbxkgX_g","jump":"straight","secs":100},
     {"name":"Egg pockets | Amuse bouche | Egg snack | Egg recipes | Egg oeuf","Channel":"egg","link":"https://www.youtube.com/watch?v=7OX8VNtUkLE","jump":"straight","secs":300},
     {"name":"COD New vision city | Call of duty mobile new map | call of Duty season","Channel":"gamet","link":"https://www.youtube.com/watch?v=BkjjNamgOjk","jump":"straight","secs":540},
-    {"name":"Game of thrones | House of the Dragon | HBO Games of thrones prequel","Channel":"vlog","link":"https://www.youtube.com/watch?v=TUPwvkt0b7A","jump":"straight","secs":80},
     {"name":"Egg popcorn | Egg recipes | Crispy egg fry | Egg fry | Amuse bouche | Egg oeuf","Channel":"egg","link":"https://www.youtube.com/watch?v=9KsLPqRO1Wc","jump":"straight","secs":260},
-    {"name":"Avatar 2 trailer | Avatar the way of water  |  Tamil teaser trailer | December 2022 | Avatar tamil","Channel":"vlog","link":"https://www.youtube.com/watch?v=9KsLPqRO1Wc","jump":"straight","secs":120}
-    
+    {"name":"Avatar metkayina omelette","Channel":"egg","link":"https://t.co/yODt0Hmx9G","jump":"twitter","secs":70}
     
 ]}

@@ -1,9 +1,5 @@
 from flask import Flask, request, jsonify
 from flask import Flask, request, render_template
-from azure.core.credentials import AzureNamedKeyCredential
-from azure.data.tables import TableServiceClient
-from azure.data.tables import TableClient
-from azure.data.tables import UpdateMode
 import json
 import random
 
