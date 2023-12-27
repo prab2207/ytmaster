@@ -39,7 +39,7 @@ linkcollection=[
 //https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cad=rja&uact=8&url=https://t.co/PGBhV3rACq
 //https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cad=rja&uact=8&url=https://www.youtube.com/watch?v=saPMzlCGQIc
 //https://www.youtube.com/watch?fbclid=IwAR177FSeL4LH94r1QVUrNuyXbohZrmMjT1D51QdgtA_o4qP7eyUfRP1-dYM&v=9yUH8Loycnk&feature=youtu.be
-
+const dialogName = 'YT_Dialog';
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     timervar=setInterval(function () {
@@ -83,14 +83,18 @@ function startTimer(duration, display) {
             if(mobile=="1") timer=timer-20
             timer=20
             //timer=5
-            //actualwindow=window.open("/loadYT_test/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550"); 
-            actualwindow.location="/loadYT_test/"+count+"/"+video_data
+            if (!window[dialogName] || window[dialogName].closed) {
+                // If the dialog does not exist or is closed, open a new one
+                window[dialogName] = window.open("/loadYT_test/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550"); 
+            } else {
+                // If the dialog is open, load the link in the existing dialog
+                window[dialogName].location.href = "/loadYT_test/"+count+"/"+video_data;
+            }            
             titlecontent.textContent=linkcollection[count]["name"]
             remaining.textContent=linkcollection.length-count
             }
             else{
-                //actualwindow=window.open("https://www.bing.com", "Load YT Herokku", "width=1000,height=550");
-                actualwindow.location="/loadYT_test/"+count+"/"+video_data
+                actualwindow=window.open("https://www.bing.com", "Load YT Herokku", "width=1000,height=550");
                 titlecontent.textContent= "Completed"
                 remaining.textContent="Completed"
                 clearInterval(timervar)
@@ -100,6 +104,7 @@ function startTimer(duration, display) {
 }
 function openLink(cnt){
     //actualwindow=
+    
     actualwindow.open(linkcollection[count]);
     //window.open("/loadYT_view?cnt="+cnt, "Google", "width=1000,height=550");
 }
