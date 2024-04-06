@@ -126,6 +126,7 @@ def loadYT(no):
         with open('data0.json', encoding='utf8') as datafile:
             datacontent = json.loads(datafile.read())
             print(datacontent)
+    random.shuffle(datacontent)
     return render_template('loadview.html',data=datacontent,videono=no)
 
 @app.route('/loadYT/test/<no>')
