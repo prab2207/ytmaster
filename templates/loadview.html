@@ -2,6 +2,15 @@
 <meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
 <script>
+function shuffleArr(array) {
+  let i = array.length;
+  while (i > 0) {
+    const ri = Math.floor(Math.random() * i);
+    i--;
+    [array[i], array[ri]] = [array[ri], array[i]];
+  }
+  return array;
+}
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -20,6 +29,9 @@ titlecontent=null
 remaining=null
 
     linkcollection={{data.videos | safe}}
+    linkcollection=shuffleArr(linkcollection)
+    linkcollection = linkcollection.slice(0, 40);
+
 /*
 linkcollection=[
     {"name":"Maggi Omlette","Channel":"egg","link":"https://www.youtube.com/watch?v=6wS_lIycnJY","secs":10},
