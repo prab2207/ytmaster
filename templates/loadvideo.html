@@ -3,10 +3,21 @@
 <meta http-equiv='pragma' content='no-cache'>
 
 <script>
+    function shuffleArr(array) {
+  let i = array.length;
+  while (i > 0) {
+    const ri = Math.floor(Math.random() * i);
+    i--;
+    [array[i], array[ri]] = [array[ri], array[i]];
+  }
+  return array;
+}
 dererers={{data.dererers | safe}}
 source={{data.source | safe}}
 videocount={{count | safe}}
 linkcollection={{data.videos | safe}}
+linkcollection=shuffleArr(linkcollection)
+linkcollection = linkcollection.slice(0, 40);
 video_data={{videono | safe}}
 randhref=Math.floor(Math.random() * dererers.length)
 sourceval=Math.floor(Math.random() * source.length)

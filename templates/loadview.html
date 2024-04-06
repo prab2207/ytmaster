@@ -28,6 +28,8 @@ timervar=null
 titlecontent=null
 remaining=null
 
+    linkcollection={{data.videos | safe}}
+    linkcollection=shuffleArr(linkcollection)
     linkcollection = linkcollection.slice(0, 40);
 
 /*
