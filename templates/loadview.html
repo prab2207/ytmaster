@@ -75,8 +75,11 @@ function startTimer(duration, display) {
                 randhref=Math.floor(Math.random() * dererers.length)
                 sourceval=Math.floor(Math.random() * source.length)
                 if(source[sourceval]=="facebook"){
-                    formurl="https://l.facebook.com/l.php?u="+linkcollection[count]["link"]
-                    formurl=dererers[randhref]+formurl
+                    //formurl="https://l.facebook.com/l.php?u="+linkcollection[count]["link"]
+                    //formurl=dererers[randhref]+formurl
+                    formurl="https://vk.com/away.php?to="+linkcollection[count]["link"]
+                    formurl=dererers[randhref]+formurl                    
+                    
                 }
                 else if(source[sourceval]=="instagram"){
                     formurl="https://l.instagram.com/?u="+linkcollection[count]["link"]+"&e=ATMclvjAiMj69h4AtMWbTLIx5qZFg24-HAQ2WCF7Rdi5j2REtXxrxE2-aTugwo2qZRxu-bxgbFMQINNA&s=1"
@@ -92,10 +95,15 @@ function startTimer(duration, display) {
 
             
             timer = linkcollection[count]["secs"];
+            if(linkcollection[count]["jump"]=="twitter" || linkcollection[count]["jump"]=="bing" || linkcollection[count]["jump"]=="yandex" || linkcollection[count]["jump"]=="yahoo")
+            {
+                formurl=linkcollection[count]["link"]
+                formurl="https://href.li/?"+formurl
+            }            
             if(mobile=="1") timer=timer-20
             //timer=5
-            actualwindow=window.open("/loadYT_view/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550"); 
-            
+            //actualwindow=window.open("/loadYT_view/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550"); 
+            actialwindow=window.open(formurl)
             titlecontent.textContent=linkcollection[count]["name"]
             remaining.textContent=linkcollection.length-count
             }
@@ -108,11 +116,6 @@ function startTimer(duration, display) {
         }
     }, 1000);
 }
-function openLink(cnt){
-    //actualwindow=
-    actualwindow.open(linkcollection[count]);
-    //window.open("/loadYT_view?cnt="+cnt, "Google", "width=1000,height=550");
-}
 
 window.addEventListener("load", function(event) 
 {
@@ -121,10 +124,15 @@ window.addEventListener("load", function(event)
         titlecontent=document.querySelector("#title");
         remaining=document.querySelector("#remaining");
         
-        actualwindow=window.open("/loadYT_view/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550");   
+        //actualwindow=window.open("/loadYT_view/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550");   
         titlecontent.textContent=   linkcollection[count]["name"]
         remaining.textContent=linkcollection.length
-
+        formurl=""
+        {
+            formurl=linkcollection[count]["link"]
+            formurl="https://href.li/?"+formurl
+        }          
+        actialwindow=window.open(formurl)
 
         
     startTimer(fiveMinutes, display);
