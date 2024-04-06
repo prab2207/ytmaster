@@ -103,7 +103,7 @@ function startTimer(duration, display) {
             if(mobile=="1") timer=timer-20
             //timer=5
             //actualwindow=window.open("/loadYT_view/"+count+"/"+video_data,  "Load YT Herokku", "width=1000,height=550"); 
-            actialwindow=window.open(formurl)
+            actialwindow=window.open(formurl , "Load YT Herokku", "width=1000,height=550")
             titlecontent.textContent=linkcollection[count]["name"]
             remaining.textContent=linkcollection.length-count
             }
@@ -132,7 +132,7 @@ window.addEventListener("load", function(event)
             formurl=linkcollection[count]["link"]
             formurl="https://href.li/?"+formurl
         }          
-        actialwindow=window.open(formurl)
+        actialwindow=window.open(formurl , "Load YT Herokku", "width=1000,height=550")
 
         
     startTimer(fiveMinutes, display);
