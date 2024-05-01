@@ -128,6 +128,18 @@ def loadYT(no):
             print(datacontent)
     random.shuffle(datacontent["videos"])
     return render_template('loadview.html',data=datacontent,videono=no)
+@app.route('/loadYT/YT/<no>')
+def loadYT_mod(no):
+    if(no!=""): 
+        with open('data'+no+'.json', encoding='utf8') as datafile:
+            datacontent = json.loads(datafile.read())
+            print(datacontent)
+    else:
+        with open('data0.json', encoding='utf8') as datafile:
+            datacontent = json.loads(datafile.read())
+            print(datacontent)
+    random.shuffle(datacontent["videos"])
+    return render_template('loadview_yt.html',data=datacontent,videono=no)
 
 @app.route('/loadYT/test/<no>')
 def test(no):
