@@ -6,11 +6,15 @@ while(1==1):
     edge_path = r"c:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
     url="https://ytmaster.onrender.com/loadYT/8"
     #command = [brave_path,url, "--incognito"] #brave
-    #command = [edge_path,url, "-inprivate"]
-    command = [edge_path,url]
-    subprocess.run(command)
+    command = [edge_path,url, "-inprivate"]
+    #command = [edge_path,url]
+    subprocess.Popen(command)
     print("# started process")
-    time.sleep(4*60*60)
+    i=0
+    while(i<=(2*60*60)):
+        print(i)
+        time.sleep(1)
+        i=i+1
     print("# resetting process")
     command = ["taskkill", "/F", "/IM", "msedge.exe"]
     subprocess.run(command)
